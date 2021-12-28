@@ -1,0 +1,132 @@
+.spinner {
+  width: 32px;
+  height: 32px;
+  margin: 10px auto;
+  border: 4px #ddd solid;
+  border-top: 4px #2e93e6 solid;
+  border-radius: 50%;
+  animation: sp-anime 1s infinite linear;
+}
+
+@keyframes sp-anime {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.Header {
+  /* margin: 2em 0; */
+  position: relative;
+  /* padding: 0.5em 1.5em; */
+  border-top: solid 2px #464646;
+  border-bottom: solid 2px #464646;
+  text-align: center;
+  background: linear-gradient(#e1bee8, #bec5e8);
+  color: #464646;
+}
+.Header :before,
+.Header :after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  width: 2px;
+  height: -webkit-calc(100% + 20px);
+  height: calc(100% + 20px);
+  background-color: #464646;
+}
+.Header :before {
+  left: 10px;
+}
+.Header :after {
+  right: 10px;
+}
+
+.Title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.Label {
+  position: relative;
+  background: linear-gradient(#e1bee8, #bec5e8);
+  color: #464646;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  width: 150px;
+  height: 50px;
+  margin: 32px 0 32px 64px;
+}
+
+.PrefectureList {
+  margin: 24px 0 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  min-height: 300px;
+  /* margin-bottom: 80px; */
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+.PrefectureList:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.PrefectureCard {
+  max-width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  padding-left: 28px;
+  cursor: pointer;
+  user-select: none; /* テキストの選択を防ぐ */
+  box-sizing: border-box;
+  max-width: 1200px;
+  flex-direction: column;
+  cursor: pointer;
+  margin: 20px;
+}
+
+/* inputは非表示にする */
+.PrefectureCard input {
+  display: none;
+}
+/* □ */
+.checkmark {
+  position: absolute;
+  top: 0; /* 上からの位置 */
+  left: 0;
+  height: 22px; /* 大きさ */
+  width: 22px; /* 大きさ */
+  border: solid 2px #d4dae2; /* 線 */
+  border-radius: 4px;
+  box-sizing: border-box;
+  flex-direction: column;
+}
+
+/* ✓ */
+.checkmark:after {
+  content: '';
+  position: absolute;
+  left: 5px; /* チェックの位置 */
+  top: 1px; /* チェックの位置 */
+  width: 6px; /* チェックの大きさ */
+  height: 10px; /* チェックの大きさ */
+  border: solid #ffffff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  opacity: 0; /* 透明にしておく */
+}
+
+/* チェックが入ったときの□ */
+.PrefectureCard input:checked + .checkmark {
+  background: linear-gradient(#e1bee8, #bec5e8); /* チェック時の色 */
+  border-color: linear-gradient(#e1bee8, #bec5e8); /* チェック時の色 */
+}
+
+/* チェックが入ったときの✓ */
+.PrefectureCard input:checked + .checkmark:after {
+  opacity: 1; /* 透明を解除 */
+}
