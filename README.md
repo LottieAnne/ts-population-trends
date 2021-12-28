@@ -1,7 +1,7 @@
 都道府県別人口推移データをグラフで表示するアプリケーションです。
 
 
-# Getting Started with Create React App
+### Getting Started with Create React App
 
     yarn create react-app react-app --template typescript
 
@@ -9,7 +9,7 @@
 
 
 
-# Setting on ESLint & Prettier
+### Setting on ESLint & Prettier
   TypeScript × ESLint
 
     yarn add -D @typescript-eslint/eslint-plugin @typescript-eslint/parser
