@@ -37,16 +37,16 @@
     "import/resolver": {
       "node": {
         "paths": ["src"],
-        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+        "extensions": [".ts", ".tsx", ".js", ".jsx"]
       }
     }
   },
-  "react/jsx-filename-extension": [
+  /*   "react/jsx-filename-extension": [
     "error",
     {
-      "extensions": [".jsx", ".tsx"]
+      "extensions": [".tsx", ".jsx"]
     }
-  ],
+  ], */
   "react/react-in-jsx-scope": "off",
   "no-void": [
     "error",
