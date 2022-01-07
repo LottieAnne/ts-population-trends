@@ -3,7 +3,7 @@ import CheckField from './CheckField';
 import Graph from './Graph';
 import { HeadingPrefecture } from '../molecules/HeadingPrefecture';
 import { HeadingGraph } from '../molecules/HeadingGraph';
-import { useAllPrefectures } from '../../hooks/useAllPrefectures';
+import { useAllPrefectures } from '..//hooks/useAllPrefectures';
 
 import axios from 'axios';
 
@@ -21,13 +21,12 @@ export const Main: VFC = () => {
     prefCode: number,
     check: boolean
   ) => {
-    let c_prefPopulation = prefPopulation.slice();
+    let cPrefPopulation = prefPopulation.slice();
 
     // check action
     if (check) {
       if (
-        c_prefPopulation.findIndex((value) => value.prefName === prefName) !==
-        -1
+        cPrefPopulation.findIndex((value) => value.prefName === prefName) !== -1
       )
         return;
 
@@ -42,12 +41,12 @@ export const Main: VFC = () => {
           }
         )
         .then((results) => {
-          c_prefPopulation.push({
+          cPrefPopulation.push({
             prefName: prefName,
             data: results.data.result.data[0].data,
           });
 
-          setPrefPopulation(c_prefPopulation);
+          setPrefPopulation(cPrefPopulation);
         })
         .catch((error) => {
           return;
@@ -55,12 +54,12 @@ export const Main: VFC = () => {
     }
     // uncheck action
     else {
-      const deleteIndex = c_prefPopulation.findIndex(
+      const deleteIndex = cPrefPopulation.findIndex(
         (value) => value.prefName === prefName
       );
       if (deleteIndex === -1) return;
-      c_prefPopulation.splice(deleteIndex, 1);
-      setPrefPopulation(c_prefPopulation);
+      cPrefPopulation.splice(deleteIndex, 1);
+      setPrefPopulation(cPrefPopulation);
     }
   };
 

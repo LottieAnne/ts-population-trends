@@ -5,11 +5,11 @@ import { Population } from '../types/api/population';
 
 // Component that view Graph of selected prefecture
 const Graph: VFC<Population> = ({ populationdata }) => {
-  let series: Highcharts.SeriesOptionsType[] = [];
-  let categories = [];
+  const series: Highcharts.SeriesOptionsType[] = [];
+  const categories = [];
 
   for (let p of populationdata) {
-    let data: Array<number> = [];
+    const data: Array<number> = [];
 
     for (let pd of p.data) {
       data.push(pd.value);
@@ -29,7 +29,7 @@ const Graph: VFC<Population> = ({ populationdata }) => {
     },
 
     title: {
-      text: 'Total Population Trends by Prefecuture',
+      text: 'Total Population Trends by Prefecture',
     },
     yAxis: {
       title: {
