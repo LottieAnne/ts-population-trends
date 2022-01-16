@@ -21,7 +21,7 @@ export const Main: VFC = () => {
     prefCode: number,
     check: boolean
   ) => {
-    let cPrefPopulation = prefPopulation.slice();
+    const cPrefPopulation = prefPopulation.slice();
 
     // check action
     if (check) {
@@ -53,7 +53,7 @@ export const Main: VFC = () => {
         });
     }
     // uncheck action
-    else {
+    if (!check) {
       const deleteIndex = cPrefPopulation.findIndex(
         (value) => value.prefName === prefName
       );

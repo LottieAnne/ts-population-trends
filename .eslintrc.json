@@ -41,13 +41,13 @@
       }
     }
   },
-  /*   "react/jsx-filename-extension": [
+    "react/jsx-filename-extension": [
     "error",
     {
       "extensions": [".tsx", ".jsx"]
     }
-  ], */
-  "react/react-in-jsx-scope": "off",
+  ], 
+   "react/react-in-jsx-scope": "off",
   "no-void": [
     "error",
     {

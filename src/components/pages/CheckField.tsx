@@ -22,7 +22,7 @@ const CheckField: VFC<Prefecture> = ({ prefectures, onChange }) => {
               id={'checkbox' + prefecture.prefCode}
             />
             <span className="checkmark"></span>
-            {prefecture.prefName}
+            {prefecture.prefName.length === 3 ?  prefecture.prefName + "　" : prefecture.prefName}
           </label>
         ))}
       </div>
